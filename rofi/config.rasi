@@ -1,0 +1,100 @@
+/**
+ * Rofi Configuration - Custom Theme
+ */
+
+configuration {
+    modi: "drun,run,window,filebrowser";
+    show-icons: true;
+    terminal: "alacritty";
+    
+    case-sensitive: false;
+    sort: true;
+    sorting-method: "fzf";
+    matching: "normal";
+    scroll-method: 1;
+    
+    width: 50%;
+    lines: 12;
+    columns: 1;
+    fixed-num-lines: true;
+    
+    location: 0;
+    yoffset: 50;
+    xoffset: 0;
+    
+    cycle: true;
+    
+    drun-display-format: "{icon} {name}";
+    window-format: "{w}  {i}  {c}  {t}";
+}
+
+window {
+    transparency: "real";
+    width: 35%;
+    height: 40%;
+    border: 2px;
+    border-color: #89B4FA;
+    border-radius: 15px;
+    background-color: #1E1E2E;
+}
+
+mainbox {
+    border: 0;
+    padding: 2px;
+    children: [inputbar, listview];
+}
+
+inputbar {
+    border: 0px;
+    border-color: #585B70;
+    border-radius: 10px;
+    padding: 0px;
+    margin: 0px 0px 10px 0px;
+    background-color: #313244;
+    
+    children: [prompt, entry];
+}
+
+prompt {
+    enabled: true;
+    padding: 0px 10px 0px 5px;
+    background-color: inherit;
+    text-color: #89B4FA;
+    font: "JetBrains Mono Nerd Font 14";
+}
+
+entry {
+    enabled: true;
+    padding: 5px;
+    background-color: inherit;
+    text-color: #CDD6F4;
+    font: "JetBrains Mono Nerd Font 14";
+    placeholder: "Search...";
+}
+
+listview {
+    enabled: true;
+    columns: 1;
+    lines: 10;
+    cycle: true;
+    dynamic: true;
+    scrollbar: true;
+    layout: vertical;
+    
+    children: [element];
+}
+
+element {
+    border: 0;
+    padding: 2px;
+    margin: 1px 0px;
+    background-color: transparent;
+    text-color: #CDD6F4;
+    font: "JetBrains Mono Nerd Font 13";
+}
+
+element selected {
+    background-color: #585B70;
+    text-color: #89B4FA;
+    border-radius: 8px;
+}
