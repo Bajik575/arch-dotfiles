@@ -23,7 +23,7 @@
     "modules-right": [
         "hyprland/language",
 //        "sway/language",
-        "network",
+//        "network", // use either nm-applet or this module 
         "cpu",
         "memory",
         "temperature",
