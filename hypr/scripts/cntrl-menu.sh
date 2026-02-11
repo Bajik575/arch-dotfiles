@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHOICE=$(echo -e "audio\nbluetooth\nwifi\nbtop" | rofi -dmenu -p "menu" -i)
+CHOICE=$(echo -e "audio\nbluetooth\nwifi\nbtop" | rofi -dmenu -p "ctrl" -i)
 
 case "$CHOICE" in
     "audio") foot -e pulsemixer ;;

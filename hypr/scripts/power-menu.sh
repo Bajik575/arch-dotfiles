@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CHOICE=$(echo -e "Poweroff\nReboot\nSuspend\nLogout\nLock" | rofi -dmenu -p "menu" -i)
+CHOICE=$(echo -e "Poweroff\nReboot\nSuspend\nLogout\nLock" | rofi -dmenu -p "power" -i)
 
 case "$CHOICE" in
     "Poweroff") shutdown now ;;

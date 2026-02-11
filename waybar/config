@@ -28,8 +28,8 @@
         "memory",
         "temperature",
         "custom/nvidia_temp",
-        "battery"
-	    //"custom/archicon"
+        "battery",
+	    "custom/archicon"
     ],
     "hyprland/workspaces": {
         "disable-scroll": true,
