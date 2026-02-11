@@ -25,6 +25,7 @@
 #cpu,
 #memory,
 #temperature,
+#custom-nvidia_temp,
 #backlight,
 #idle_inhibitor,
 #mpd,
@@ -55,7 +56,9 @@
 #temperature{
     background-color: rgb(62, 66, 22);
 }
-
+#custom-nvidia_temp{
+	background-color: rgb(00, 80, 22);
+}
 #custom-power{
 	font-size: 12;
     background-color: rgb(56, 34, 44);

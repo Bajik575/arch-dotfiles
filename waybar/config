@@ -1,17 +1,11 @@
-// -*- mode: jsonc -*-
 {
-	
     "layer": "top",
-    "position": "top", // или "bottom", "left", "right"
-    "margin-top": 5,  // Отступ сверху
+    "position": "top",
+    "margin-top": 5,
     "margin-right": 5,
     "margin-left": 5,
     "margin-up" : 5,
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    // "width": 1280, // Waybar width
-    "spacing": 15, // Gaps between modules (4px)
-    // Choose the order of the modules
+    "spacing": 15,
     "modules-left": [
         "custom/power",
         "power-profiles-daemon",
@@ -33,30 +27,16 @@
         "cpu",
         "memory",
         "temperature",
-        "battery",
-	    "custom/archicon"
-        //"custom/notification"
-        //"clock",
-        //"tray",
-        //"custom/power"
+        "custom/nvidia_temp",
+        "battery"
+	    //"custom/archicon"
     ],
-    // Modules configuration
-    // "hyprland/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+    },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
         "format-disconnected": "Disconnected ",
@@ -84,11 +64,6 @@
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
 
-//"custom/archicon": {
-//    "format": "",
-//    "tooltip": false
-//},
-
     "idle_inhibitor": {
         "format": "{icon} ",
         "format-icons": {
@@ -115,10 +90,12 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": false,
+        "on-click": "foot -e btop"
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+        "on-click": "foot -e htop"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -126,7 +103,12 @@
         "critical-threshold": 60,
         "format-critical": "!{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""]
+    },
+    "custom/nvidia_temp": {
+        "format": " {}°C",
+        "interval": 5,
+        "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
     },
     "backlight": {
         // "device": "acpi_video1",
@@ -134,20 +116,24 @@
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
-        "interval": 1,
+        "bat": "BAT1",        // check /sys/class/power_supply/
+        "adapter": "ADP1",    // check /sys/class/power_supply/
+        "interval": 10,
+        "full-at": 95,
+        "design-capacity": false,
         "states": {
-            // "good": 90,
+            "good": 95,
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-discharging": "{icon} {capacity}%",
+        "format-alt": "{time} ({power}W)",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip": true,
+        "tooltip-format": "{timeTo} before {capacity}%\nconsumption: {power}W"
     },
     "power-profiles-daemon": {
       "format": "{icon}",
@@ -188,7 +174,7 @@
             "default": ["", "", ""]
         },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "qpwgraph",
+        "on-click-right": "foot -e pulsemixer",
     },
     "custom/archicon": {
         "format": "",

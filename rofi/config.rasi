@@ -1,100 +1,252 @@
-/**
- * Rofi Configuration - Custom Theme
- */
-
 configuration {
-    modi: "drun,run,window,filebrowser";
+    modi: "drun,run,window";
     show-icons: true;
-    terminal: "alacritty";
-    
-    case-sensitive: false;
+    icon-theme: "Papirus-Dark";
+    font: "Iosevka Nerd Font Mono 14";
+    display-drun: "󰀻 Apps";
+    display-run: " Run";
+    display-window: "󰖯 Windows";
+    terminal: "kitty";
+    drun-display-format: "{name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    sidebar-mode: false;
+    width: 600;
+    lines: 5;
+    columns: 2;
+    fixed-num-lines: true;
     sort: true;
     sorting-method: "fzf";
-    matching: "normal";
-    scroll-method: 1;
-    
-    width: 50%;
-    lines: 12;
-    columns: 1;
-    fixed-num-lines: true;
-    
-    location: 0;
-    yoffset: 50;
-    xoffset: 0;
-    
+    case-sensitive: false;
     cycle: true;
-    
-    drun-display-format: "{icon} {name}";
-    window-format: "{w}  {i}  {c}  {t}";
+    hover-select: true;
+    click-to-exit: true;
+}
+
+/* Catppuccin Mocha Colors - Match Polybar */
+* {
+    base:      #1e1e2e;
+    mantle:    #181825;
+    crust:     #11111b;
+    text:      #cdd6f4;
+    subtext0:  #a6adc8;
+    subtext1:  #bac2de;
+    surface0:  #313244;
+    surface1:  #45475a;
+    surface2:  #585b70;
+    overlay0:  #6c7086;
+    overlay1:  #7f849c;
+    overlay2:  #9399b2;
+    blue:      #89b4fa;
+    lavender:  #b4befe;
+    sapphire:  #74c7ec;
+    sky:       #89dceb;
+    teal:      #94e2d5;
+    green:     #a6e3a1;
+    yellow:    #f9e2af;
+    peach:     #fab387;
+    maroon:    #eba0ac;
+    red:       #f38ba8;
+    mauve:     #cba6f7;
+    pink:      #f5c2e7;
+    flamingo:  #f2cdcd;
+    rosewater: #f5e0dc;
 }
 
 window {
     transparency: "real";
-    width: 35%;
-    height: 40%;
-    border: 2px;
-    border-color: #89B4FA;
-    border-radius: 15px;
-    background-color: #1E1E2E;
+    location: center;
+    anchor: center;
+    fullscreen: false;
+    width: 600px;
+    border-radius: 12px;
+    cursor: "default";
+    background-color: @base;
+    border: 2px solid;
+    border-color: @surface1;
 }
 
 mainbox {
-    border: 0;
-    padding: 2px;
-    children: [inputbar, listview];
+    enabled: true;
+    spacing: 10px;
+    margin: 0px;
+    padding: 15px;
+    border: 0px solid;
+    border-radius: 0px 0px 0px 0px;
+    border-color: @surface1;
+    background-color: transparent;
+    children: [ "inputbar", "listview" ];
 }
 
 inputbar {
-    border: 0px;
-    border-color: #585B70;
-    border-radius: 10px;
-    padding: 0px;
-    margin: 0px 0px 10px 0px;
-    background-color: #313244;
-    
-    children: [prompt, entry];
+    enabled: true;
+    spacing: 10px;
+    margin: 0px;
+    padding: 12px;
+    border: 0px solid;
+    border-radius: 8px;
+    border-color: @surface1;
+    background-color: @surface0;
+    text-color: @text;
+    children: [ "prompt", "entry" ];
 }
 
 prompt {
     enabled: true;
-    padding: 0px 10px 0px 5px;
+    background-color: @mauve;
+    text-color: @crust;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font: "Iosevka Nerd Font Mono Bold 14";
+}
+
+textbox-prompt-colon {
+    enabled: true;
+    expand: false;
+    str: ":";
     background-color: inherit;
-    text-color: #89B4FA;
-    font: "JetBrains Mono Nerd Font 14";
+    text-color: inherit;
 }
 
 entry {
     enabled: true;
-    padding: 5px;
-    background-color: inherit;
-    text-color: #CDD6F4;
-    font: "JetBrains Mono Nerd Font 14";
-    placeholder: "Search...";
+    background-color: transparent;
+    text-color: @text;
+    cursor: text;
+    placeholder: "Search applications...";
+    placeholder-color: @subtext0;
+    padding: 8px 4px;
 }
 
 listview {
     enabled: true;
     columns: 1;
-    lines: 10;
+    lines: 12;
     cycle: true;
     dynamic: true;
-    scrollbar: true;
+    scrollbar: false;
     layout: vertical;
+    reverse: false;
+    fixed-height: true;
+    fixed-columns: true;
     
-    children: [element];
+    spacing: 2px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px solid;
+    border-radius: 0px;
+    border-color: @surface1;
+    background-color: transparent;
+    text-color: @text;
+    cursor: "default";
+}
+
+scrollbar {
+    handle-width: 5px;
+    handle-color: @surface2;
+    border-radius: 8px;
+    background-color: @surface0;
 }
 
 element {
-    border: 0;
-    padding: 2px;
-    margin: 1px 0px;
+    enabled: true;
+    spacing: 10px;
+    margin: 0px;
+    padding: 10px;
+    border: 0px solid;
+    border-radius: 8px;
+    border-color: @surface1;
     background-color: transparent;
-    text-color: #CDD6F4;
-    font: "JetBrains Mono Nerd Font 13";
+    text-color: @text;
+    cursor: pointer;
 }
 
-element selected {
-    background-color: #585B70;
-    text-color: #89B4FA;
-    border-radius: 8px;
+element normal.normal {
+    background-color: transparent;
+    text-color: @text;
+}
+
+element normal.urgent {
+    background-color: @red;
+    text-color: @crust;
+}
+
+element normal.active {
+    background-color: @green;
+    text-color: @crust;
+}
+
+element selected.normal {
+    background-color: @mauve;
+    text-color: @crust;
+}
+
+element selected.urgent {
+    background-color: @red;
+    text-color: @crust;
+}
+
+element selected.active {
+    background-color: @green;
+    text-color: @crust;
+}
+
+element alternate.normal {
+    background-color: transparent;
+    text-color: @text;
+}
+
+element alternate.urgent {
+    background-color: @red;
+    text-color: @crust;
+}
+
+element alternate.active {
+    background-color: @green;
+    text-color: @crust;
+}
+
+element-icon {
+    background-color: transparent;
+    text-color: inherit;
+    size: 28px;
+    cursor: inherit;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+    highlight: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+}
+
+/* Optional: Custom colors for different modes */
+mode-switcher{
+    enabled: true;
+    spacing: 10px;
+    margin: 0px;
+    padding: 0px;
+    border: 0px solid;
+    border-radius: 0px;
+    border-color: @surface1;
+    background-color: transparent;
+    text-color: @text;
+}
+
+button {
+    padding: 8px;
+    border: 0px solid;
+    border-radius: 6px;
+    border-color: @surface1;
+    background-color: @surface0;
+    text-color: @text;
+    cursor: pointer;
+}
+
+button selected {
+    background-color: @mauve;
+    text-color: @crust;
 }
