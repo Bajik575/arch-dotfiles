@@ -1,21 +1,61 @@
-# a called to `_pure_prompt_new_line` is triggered by an event
-function fish_prompt
-    set --local exit_codes $pipestatus # save previous exit codes
-
-    # Handle transient prompt (Fish 4.1.0+)
-    # When --final-rendering is passed, show simplified prompt for scrollback
-    if contains -- --final-rendering $argv
-        set --local last_status $exit_codes[-1]
-
-        echo -e -n (_pure_prompt_transient $last_status)
-        echo -e -n (_pure_prompt_ending)
-        return
-    end
-
-    _pure_print_prompt_rows # manage default vs. compact prompt
-    _pure_place_iterm2_prompt_mark # place iTerm shell integration mark
-    echo -e -n (_pure_prompt $exit_codes) # print prompt
-    echo -e -n (_pure_prompt_ending) # reset colors and end prompt
-
-    set _pure_fresh_session false
+function fish_prompt --description 'Write out the prompt'
+        set -l last_pipestatus $pipestatus
+        set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
+    
+        if not set -q __fish_git_prompt_show_informative_status
+                set -g __fish_git_prompt_show_informative_status 1
+        end
+        if not set -q __fish_git_prompt_hide_untrackedfiles
+                set -g __fish_git_prompt_hide_untrackedfiles 1
+        end
+        if not set -q __fish_git_prompt_color_branch
+                set -g __fish_git_prompt_color_branch magenta --bold
+        end
+        if not set -q __fish_git_prompt_showupstream
+                set -g __fish_git_prompt_showupstream informative
+        end
+        if not set -q __fish_git_prompt_color_dirtystate
+                set -g __fish_git_prompt_color_dirtystate blue
+        end
+        if not set -q __fish_git_prompt_color_stagedstate
+                set -g __fish_git_prompt_color_stagedstate yellow
+        end
+        if not set -q __fish_git_prompt_color_invalidstate
+                set -g __fish_git_prompt_color_invalidstate red
+        end
+        if not set -q __fish_git_prompt_color_untrackedfiles
+                set -g __fish_git_prompt_color_untrackedfiles $fish_color_normal
+        end
+        if not set -q __fish_git_prompt_color_cleanstate
+                set -g __fish_git_prompt_color_cleanstate green --bold
+        end
+    
+        set -l color_cwd
+        set -l suffix
+        if functions -q fish_is_root_user; and fish_is_root_user
+                if set -q fish_color_cwd_root
+                        set color_cwd $fish_color_cwd_root
+                else
+                        set color_cwd $fish_color_cwd
+                end
+                set suffix '#'
+        else
+                set color_cwd $fish_color_cwd
+                set suffix '$'
+        end
+    
+        # PWD
+        set_color $color_cwd
+        echo -n (prompt_pwd)
+        set_color normal
+    
+        printf '%s ' (fish_vcs_prompt)
+    
+        set -l status_color (set_color $fish_color_status)
+        set -l statusb_color (set_color --bold $fish_color_status)
+        set -l prompt_status (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
+        echo -n $prompt_status
+        set_color normal
+    
+        echo -n "$suffix "
 end

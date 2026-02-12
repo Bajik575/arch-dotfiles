@@ -115,7 +115,9 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-click":       "~/.config/waybar/scripts/blue-light-filter.sh up",
+        "on-click-right": "~/.config/waybar/scripts/blue-light-filter.sh down"
     },
     "battery": {
         "bat": "BAT1",        // check /sys/class/power_supply/

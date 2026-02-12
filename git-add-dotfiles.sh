@@ -10,5 +10,6 @@ git add cava
 git add yay
 git add paru
 
+git add backups
 
 git add git-add-dotfiles.sh
