@@ -6,7 +6,7 @@ configuration {
     display-drun: "󰀻 Apps";
     display-run: " Run";
     display-window: "󰖯 Windows";
-    terminal: "kitty";
+    terminal: "foot";
     drun-display-format: "{name}";
     location: 0;
     disable-history: false;
@@ -40,13 +40,13 @@ configuration {
     overlay2:  #9399b2;
     blue:      #89b4fa;
     lavender:  #b4befe;
-    sapphire:  #74c7ec;
+    sapphire:  #79C8DD;
     sky:       #89dceb;
     teal:      #94e2d5;
     green:     #a6e3a1;
     yellow:    #f9e2af;
     peach:     #fab387;
-    maroon:    #eba0ac;
+    maroon:    #79C8DD;
     red:       #f38ba8;
     mauve:     #cba6f7;
     pink:      #f5c2e7;
@@ -94,7 +94,7 @@ inputbar {
 
 prompt {
     enabled: true;
-    background-color: @mauve;
+    background-color: @sapphire;
     text-color: @crust;
     padding: 8px 12px;
     border-radius: 6px;
@@ -178,7 +178,7 @@ element normal.active {
 }
 
 element selected.normal {
-    background-color: @mauve;
+    background-color: @sapphire;
     text-color: @crust;
 }
 
@@ -247,6 +247,6 @@ button {
 }
 
 button selected {
-    background-color: @mauve;
+    background-color: @sapphire;
     text-color: @crust;
 }

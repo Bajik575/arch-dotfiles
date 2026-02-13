@@ -7,7 +7,7 @@
     "margin-up" : 5,
     "spacing": 15,
     "modules-left": [
-        "custom/power",
+        "custom/rofi-main-menu",
         "power-profiles-daemon",
         "idle_inhibitor",
         "backlight",
@@ -116,8 +116,8 @@
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "on-click":       "~/.config/waybar/scripts/blue-light-filter.sh up",
-        "on-click-right": "~/.config/waybar/scripts/blue-light-filter.sh down"
+        "on-click":       "~/.config/hypr/scripts/blue-light-filter.sh up",
+        "on-click-right": "~/.config/hypr/scripts/blue-light-filter.sh down"
     },
     "battery": {
         "bat": "BAT1",        // check /sys/class/power_supply/
@@ -159,6 +159,7 @@
         "on-click-right" : "foot -e nmtui"
     },
     "pulseaudio": {
+    	"interaval": 1,
         "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon} ",
@@ -186,8 +187,8 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-    "custom/power": {
-        "format" : "⏻",
-		"on-click": "~/.config/hypr/scripts/power-menu.sh"
+    "custom/rofi-main-menu": {
+        "format" : "",
+		"on-click": "~/.config/hypr/scripts/rofi-scripts/main.sh"
     }
 }

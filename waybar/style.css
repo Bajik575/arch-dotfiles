@@ -1,11 +1,4 @@
-/**
- * Универсальный стиль для Waybar
- * - Прозрачный фон
- * - Скруглённые модули
- * - Отступы между модулями
- */
 
-/* Основные настройки Waybar */
 #waybar {
     background-color: transparent;
     color: #e9e9e9;
@@ -13,7 +6,6 @@
     font-size: 15px;
 }
 
-/* Общие стили для всех модулей */
 #workspaces,
 #window,
 #clock,
@@ -33,7 +25,8 @@
 #custom-power,
 #custom-archicon,
 #language,
-#power-profiles-daemon {
+#power-profiles-daemon,
+#custom-rofi-main-menu {
     font-family: "JetBrainsMono Nerd Font";
     font-weight: 900;
     background-color: rgb(45, 34, 56);
@@ -42,9 +35,15 @@
     margin: 0 0px;
     border: 3px solid rgb(34, 36, 56);
 }
+#custom-rofi-main-menu{
+	font-size: 22px;
+	background-color: #79C8DD;
+	color:rgb(45, 34, 56);
+	padding: 0 18px 0 10px;
+}
 #custom-archicon{
     font-size: 22px;
-    color: aqua;
+    color: #79C8DD;
     padding: 0 18px 0 10px;
 }
 #cpu{
@@ -59,11 +58,6 @@
 #custom-nvidia_temp{
 	background-color: rgb(00, 80, 22);
 }
-#custom-power{
-	font-size: 12;
-    background-color: rgb(56, 34, 44);
-}
-/* Специфичные стили для отдельных модулей */
 #workspaces button {
     padding: 0 8px;
     color: #cdd6f4;
@@ -102,21 +96,16 @@
     }
 }
 
-/* Стили для иконок */
 #custom-launcher {
     padding: 0 12px 0 8px;
     font-size: 16px;
 }
-
-/* Эффекты при наведении */
 #pulseaudio:hover,
 #network:hover,
 #battery:hover,
 #clock:hover {
     background-color: rgba(49, 50, 68, 0.8);
 }
-
-/* Анимация перехода */
 #workspaces button,
 #pulseaudio,
 #network,
