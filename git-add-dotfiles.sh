@@ -2,6 +2,7 @@ git add hypr
 git add waybar
 git add rofi
 git add foot
+git add alacritty
 git add fish
 
 git add micro
@@ -10,6 +11,6 @@ git add cava
 git add yay
 git add paru
 
-git add backups
+git add root-useful-backup
 
 git add git-add-dotfiles.sh

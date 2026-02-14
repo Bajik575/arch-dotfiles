@@ -1,0 +1,2 @@
+#!/bin/bash
+nbfc set -s $1

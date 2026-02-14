@@ -1,0 +1,13 @@
+[Unit]
+Description=CPU power configuration
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/cpupower frequency-set -g schedutil # powersafe
+#ExecStart=/usr/bin/cpupower set -b 2  # powersafe level from 0 to 15 (15 is max)
+ExecStart=/bin/bash -c "echo 0 > /sys/devices/system/cpu/cpufreq/boost"
+ExecStart=/usr/bin/cpupower frequency-set -u 2.7GHz
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
