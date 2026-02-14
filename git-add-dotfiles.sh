@@ -1,3 +1,5 @@
+git rm -rf --cached .
+
 git add hypr
 git add waybar
 git add rofi
