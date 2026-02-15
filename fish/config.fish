@@ -20,7 +20,7 @@ if status is-interactive
     alias b btop
     alias c clear
     alias py python
-    alias ff fastfetch
+    alias ff "fastfetch --logo-color-1 blue --logo-color-2 blue --color blue"
 
     # system control
     alias q exit
@@ -33,3 +33,4 @@ set -g fish_greeting ""
 
 set -gx PATH $PATH $HOME/.cargo/bin
 set -gx PATH $PATH $HOME/.local/bin
+zoxide init fish | source

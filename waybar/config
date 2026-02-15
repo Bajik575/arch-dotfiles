@@ -5,7 +5,7 @@
     "margin-right": 5,
     "margin-left": 5,
     "margin-up" : 5,
-    "spacing": 5,
+    "spacing": 10,
     "modules-left": [
         "custom/rofi-main-menu",
         "power-profiles-daemon",
@@ -163,6 +163,6 @@
     },
     "custom/rofi-main-menu": {
         "format" : "",
-		"on-click": "~/.config/hypr/scripts/rofi-scripts/main.sh"
+		"on-click": "~/.config/rofi/scripts/main.sh"
     }
 }

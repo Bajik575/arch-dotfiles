@@ -6,9 +6,10 @@ git add rofi
 git add foot
 git add alacritty
 git add fish
+git add cava
 
 git add micro
-git add cava
+git add nvim
 
 git add yay
 git add paru

@@ -5,7 +5,7 @@
     background-color: transparent;
 }
 #waybar > box {
-    margin: 2px;
+    margin: 8px 8px 8px 8px;
     background-color:#1E1E2E;; 
     box-shadow: 0 0 3 1px #151515;
     transition-property: background-color;
@@ -39,20 +39,7 @@
     margin: 0 0px;
     border-radius: 15px;
   }
-
-#cpu{
-    color: rgb(66, 190, 190);
-}
-#memory{
-    color: rgb(90, 120, 220);
-}
-#temperature{
-    color: rgb(190, 190, 66);
-}
-#custom-nvidia_temp{
-	  color: rgb(00, 180, 60);
-}
-  #custom-rofi-main-menu{
+#custom-rofi-main-menu{
 	font-size: 22px;
 	background-color: #7899FA;
 	color:rgb(45, 34, 56);
@@ -66,16 +53,12 @@
 #workspaces button {
     padding: 0 8px;
     color: #cdd6f4;
-    border-radius: 50%;
+    border-radius: 8px;
     margin: 3px 0;
 }
 
-#workspaces button.active {
-    background-color: rgba(180, 190, 254, 0.3);
-}
-
-#workspaces button.urgent {
-    background-color: rgba(237, 135, 150, 0.7);
+#tray {
+    padding: 0 8px;
 }
 
 @keyframes blink {
@@ -84,21 +67,9 @@
     }
 }
 
-#tray {
-  background-color: rgba(49, 60, 68, 0.8);
-  padding: 2px 10px;
-  margin: 3px 0px;
-}
-
-#workspaces button:hover,
-#idle_inhibitor:hover,
-#cpu:hover,
-#memory:hover,
 #pulseaudio:hover,
-#backlight:hover,
 #network:hover,
-#clock:hover,
-#custom-archicon:hover {
+#clock:hover {
     background-color: rgba(49, 50, 68, 0.8);
 }
 #workspaces button,

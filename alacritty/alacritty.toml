@@ -5,7 +5,7 @@ live_config_reload = true
 TERM = "alacritty"
 
 [font]
-size = 14
+size = 20
 
 [font.normal]
 family = "JetBrains Mono Nerd Font"
@@ -22,27 +22,70 @@ dynamic_padding = true
 [window.padding]
 x = 0
 y = 0
+[colors.bright]
+black = "#585B70"
+blue = "#89B4FA"
+cyan = "#94E2D5"
+green = "#A6E3A1"
+magenta = "#F5C2E7"
+red = "#F38BA8"
+white = "#A6ADC8"
+yellow = "#F9E2AF"
 
-[colors.primary]
-background = "0x101020"
-foreground = "0xF1F8F1"
+[colors.cursor]
+cursor = "#F5E0DC"
+text = "#1E1E2E"
+
+[colors.dim]
+black = "#45475A"
+blue = "#89B4FA"
+cyan = "#94E2D5"
+green = "#A6E3A1"
+magenta = "#F5C2E7"
+red = "#F38BA8"
+white = "#BAC2DE"
+yellow = "#F9E2AF"
+
+[colors.hints.end]
+background = "#A6ADC8"
+foreground = "#1E1E2E"
+
+[colors.hints.start]
+background = "#F9E2AF"
+foreground = "#1E1E2E"
 
 [colors.normal]
-black = "0x0D1117"
-red = "0xC32424"
-green = "0x24C391"
-yellow = "0xC3A924"
-blue = "0x2455C3"
-magenta = "0xC224C3"
-cyan = "0x24BAC3"
-white = "0xE8ECF2"
+black = "#45475A"
+blue = "#89B4FA"
+cyan = "#94E2D5"
+green = "#A6E3A1"
+magenta = "#F5C2E7"
+red = "#F38BA8"
+white = "#BAC2DE"
+yellow = "#F9E2AF"
 
-[colors.bright]
-black = "0x3B4D68"
-red = "0xD93030"
-green = "0x30D9A4"
-yellow = "0xD9BD30"
-blue = "0x3063D9"
-magenta = "0xD930D9"
-cyan = "0x30D1D9"
-white = "0xFFFFFF"
+[colors.primary]
+background = "#1E1E2E"
+bright_foreground = "#CDD6F4"
+dim_foreground = "#CDD6F4"
+foreground = "#CDD6F4"
+
+[colors.search.focused_match]
+background = "#A6E3A1"
+foreground = "#1E1E2E"
+
+[colors.footer_bar]
+background = "#A6ADC8"
+foreground = "#1E1E2E"
+
+[colors.search.matches]
+background = "#A6ADC8"
+foreground = "#1E1E2E"
+
+[colors.selection]
+background = "#F5E0DC"
+text = "#1E1E2E"
+
+[colors.vi_mode_cursor]
+cursor = "#B4BEFE"
+text = "#1E1E2E"
