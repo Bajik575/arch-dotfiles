@@ -1,0 +1,129 @@
+#waybar {
+    color: #CDD6F4;
+    font-family: "Fira Code", "JetBrains Mono", monospace;
+    font-size: 15px;
+    background-color: transparent;
+}
+#waybar > box {
+    margin: 2px;
+    background-color:#1E1E2E;; 
+    box-shadow: 0 0 3 1px #151515;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 15px;
+}
+#workspaces,
+#window,
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#tray,
+#custom-notification,
+#cpu,
+#memory,
+#temperature,
+#custom-nvidia_temp,
+#backlight,
+#idle_inhibitor,
+#mpd,
+#taskbar,
+#custom-power,
+#custom-archicon,
+#language,
+#custom-rofi-main-menu {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: 900;
+    padding: 0 15px;
+    margin: 0 0px;
+    border-radius: 15px;
+  }
+
+#language {
+	padding: 0 15px;
+}
+#battery{
+	padding: 0 15px;
+}
+#tray {
+  background-color: rgba(50, 50, 60, 1);
+  padding: 2px 9px;
+  margin: 6px 10px 6px 10px;
+}
+
+
+#cpu{
+    color: #BDD520;
+    padding: 0 5px;
+}
+#memory{
+    color: #5436FF;
+    padding: 0 5px;
+}
+#temperature{
+    color: #8AE4FF;
+    padding: 0 5px;
+}
+#custom-nvidia_temp{
+	color: #7DFDA5;
+    padding: 0 5px;
+}
+
+
+#custom-rofi-main-menu{
+	font-size: 22px;
+	background-color: #7899FA;
+	color:rgb(45, 34, 56);
+	padding: 0 18px 0 10px;
+	margin: 0px 10px 0px 0px;
+}
+#custom-archicon{
+    font-size: 22px;
+    color: #7899FA;
+    padding: 0 18px 0 10px;
+}
+
+
+#workspaces button {
+    padding: 0 8px;
+    color: #cdd6f4;
+    border-radius: 11px;
+    margin: 3px 0;
+}
+#workspaces button.active {
+    background-color: rgba(180, 190, 254, 0.3);
+}
+#workspaces button.urgent {
+    background-color: rgba(237, 135, 150, 0.7);
+}
+
+
+#idle_inhibitor {
+    padding: 0 5px;
+}
+#pulseaudio {
+    padding: 0 5px;
+}
+#backlight {
+    padding: 0 5px;
+}
+
+
+@keyframes blink {
+    to {
+        background-color: rgba(243, 139, 168, 0.3);
+    }
+}
+
+#workspaces button:hover,
+#idle_inhibitor:hover,
+#cpu:hover,
+#memory:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#clock:hover,
+#custom-archicon:hover {
+    background-color: rgba(49, 50, 68, 0.8);
+    transition: background-color 0.2s ease-in-out;
+}
