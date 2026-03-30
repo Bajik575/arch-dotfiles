@@ -1,9 +1,8 @@
 git rm -rf --cached .
 
-git add hypr
+git add niri
 git add waybar
-git add rofi
-git add foot
+git add fuzzel
 git add alacritty
 git add fish
 git add cava
