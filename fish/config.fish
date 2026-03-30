@@ -40,7 +40,7 @@ if status is-interactive
     alias sysd "sudo systemctl"
     alias smd-restart "sudo systemctl restart smb nmb winbind"
     alias clock "tty-clock -c"
-    alias martix "tmatrix -c default -s 16 -t "" --fade"
+    alias matrix "tmatrix -c default -s 16 -t "" --fade"
     
     zoxide init fish | source
 end
