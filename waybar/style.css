@@ -2,7 +2,6 @@
     color: #CDD6F4;
     font-family: "Fira Code", "JetBrains Mono", monospace;
     font-size: 15px;
-    background-color: transparent;
     background-color:#1E1E2E;
 }
 #workspaces,
@@ -24,48 +23,43 @@
 #custom-power,
 #custom-archicon,
 #language,
-#custom-rofi-main-menu {
+#custom-fuzzel-menu {
     font-family: "JetBrainsMono Nerd Font";
     font-weight: 900;
-    padding: 0 15px;
-    margin: 0 0px;
+    padding: 0 5px;
   }
 
-#language {
-	padding: 0 15px;
+#pulseaudio{
+	margin: 0px 10px
 }
-#battery{
-	padding: 0 15px;
-}
-#tray {
-  margin: 0px 0px 0px 0px;
-}
-
 
 #cpu{
     color: #BDD520;
-    padding: 0 5px;
+	margin: 0px 0px 0px 10px;
 }
 #memory{
     color: #5436FF;
-    padding: 0 5px;
 }
-#temperature{
+#cpu-temperature{
     color: #8AE4FF;
-    padding: 0 5px;
 }
-#custom-nvidia_temp{
+#custom-gpu-temperature{
 	color: #7DFDA5;
-    padding: 0 5px;
+	margin: 0px 10px 0px 0px;
+}
+#battery{
 }
 
+#tray{
+	margin: 0px 10px;
+}
 
-#custom-power-menu{
+#custom-fuzzel-menu{
 	font-size: 22px;
 	background-color: #7899FA;
 	color:rgb(45, 34, 56);
 	padding: 0 18px 0 10px;
-	margin: 0px 10px 0px 0px;
+	margin: 0px 0px 0px 0px;
 }
 #custom-archicon{
     font-size: 22px;
@@ -77,6 +71,7 @@
 #workspaces button {
     padding: 0 8px;
     color: #cdd6f4;
+    padding: 0px 3px;
     margin: 3px 0;
 }
 #workspaces button.active {
@@ -84,14 +79,4 @@
 }
 #workspaces button.urgent {
     color: rgba(237, 135, 150, 0.7);
-}
-
-#idle_inhibitor {
-    padding: 0 5px;
-}
-#pulseaudio {
-    padding: 0 5px;
-}
-#backlight {
-    padding: 0 5px;
 }

@@ -3,8 +3,8 @@
     "position": "top",
     "spacing": 10,
     "modules-left": [
-        "custom/power-menu",
-        "idle_inhibitor",
+        "custom/fuzzel-menu",
+//        "idle_inhibitor",
         "backlight",
         "pulseaudio",
         "niri/workspaces"
@@ -13,14 +13,14 @@
         "clock"
     ],
     "modules-right": [
-    	"tray",
         "niri/language",
 //        "network", // use either nm-applet or this module 
         "cpu",
         "memory",
-        "temperature",
-        "custom/nvidia_temp",
+        "cpu-temperature",
+        "custom/gpu-temperature",
         "battery",
+	    "tray",
 	    "custom/archicon"
     ],
     "niri/workspaces": {
@@ -36,6 +36,8 @@
         }
     },
     "niri/language": {
+    	"on-click": "niri msg action switch-layout next",
+    	"on-right-click": "niri msg action switch-layout prev",
         "format": "{short}"
     },
     "tray": {
@@ -60,7 +62,7 @@
         "format": " {}%",
         "on-click": "alacritty -e htop"
     },
-    "temperature": { // CPU
+    "cpu-temperature": { // CPU
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 70,
@@ -69,7 +71,7 @@
         "tooltip": true,
         "tooltip-format": "CPU"
     },
-    "custom/nvidia_temp": {
+    "custom/gpu-temperature": {
         "format": "{}°C",
         "interval": 5,
         "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits",
@@ -80,8 +82,8 @@
         // "device": "acpi_video1",
         "format": "{percent}% ",
         "tooltip": false,
-        "on-click":       "~/.config/hypr/scripts/blue-light-filter.sh up",
-        "on-click-right": "~/.config/hypr/scripts/blue-light-filter.sh down"
+        "on-click":       "~/.config/waybar/scripts/blue-light-filter.sh up",
+        "on-click-right": "~/.config/waybar/scripts/blue-light-filter.sh down"
     },
     "battery": {
         "bat": "BAT1",        // check /sys/class/power_supply/
@@ -133,9 +135,10 @@
         "on-click-right": "swaync-client -d -sw",
         "escape": true
     },
-    "custom/power-menu": {
+    "custom/fuzzel-menu": {
         "format": "",
         "tooltip": false,
-		"on-click": "~/.config/fuzzel/scripts/power-menu.sh"
+		"on-click": "~/.config/fuzzel/scripts/menu.sh",
+		"on-click-right": "~/.config/fuzzel/scripts/power-menu.sh"
     }
 }

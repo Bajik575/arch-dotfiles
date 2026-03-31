@@ -12,7 +12,7 @@ set -gx TERMINAL alacritty
 if status is-interactive
     # aliases
     # cfg
-    alias _hypr "$EDITOR ~/.config/hypr/hyprland.conf"
+    alias _hypr "$EDITOR ~/.config/niri/niri.kdl"
     alias _fish "$EDITOR ~/.config/fish/config.fish"
     
     # one symbol shortcuts
@@ -29,8 +29,8 @@ if status is-interactive
     
     # system control
     alias q exit
-    alias hypr-logout "hyprctl dispatch exit"
-    alias off "shutdown now"
+    alias hypr-logout "niri msg action quit"
+    alias off "systemctl poweroff"
     alias suspend "systemctl suspend"
     alias hibernate "systemctl hibernate"
 
