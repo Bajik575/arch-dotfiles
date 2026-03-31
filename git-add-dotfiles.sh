@@ -1,3 +1,4 @@
+
 git rm -rf --cached .
 
 git add niri
@@ -6,6 +7,7 @@ git add fuzzel
 git add alacritty
 git add fish
 git add cava
+git add hypr
 
 git add micro
 git add nvim

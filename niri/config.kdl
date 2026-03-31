@@ -23,8 +23,8 @@ input {
     mouse {
         // off
         // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
+        accel-speed 0.2
+        accel-profile "flat"
         // scroll-method "no-scroll"
     }
 
@@ -71,9 +71,9 @@ layout {
      }
 
     default-column-width { proportion 0.5; }
-    
+   
 	focus-ring{ off; }
-	
+
     border {
         width 3
         active-color "#89b4fa"
@@ -112,6 +112,11 @@ spawn-at-startup "waybar"
 spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
+spawn-at-startup "swayidle" "-w" \
+    "timeout" "600" "swaylock" \
+    "timeout" "605" "niri msg action power-off-monitors" \
+    "before-sleep" "hyprlock -f"
+
 spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/wallpaper.jpg"
 
 screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
@@ -128,9 +133,27 @@ animations {
 // WINDOWS RULES //
 ///////////////////
 
+workspace "1"
+workspace "2"
+workspace "3"
+
+
 window-rule {
     match app-id="nemo"
     open-floating true
+}
+
+window-rule {
+	match app-id="google-chrome-stable"
+	open-on-workspace "1"
+}
+window-rule {
+	match app-id="zed"
+	open-on-workspace "2"
+}
+window-rule {
+	match app-id="obsidian"
+	open-on-workspace "3"
 }
 
 ///////////
@@ -142,12 +165,14 @@ binds {
     // App launch binds
     Mod+Q hotkey-overlay-title="Alacritty" { spawn "alacritty"; }
 	Mod+E hotkey-overlay-title="Nemo" { spawn "nemo"; }
+	Mod+Z hotkey-overlay-title="Chrome" { spawn "google-chrome-stable"; }
+	Mod+T hotkey-overlay-title="Telegram" { spawn "AyuGram"; }
+	Mod+X hotkey-overlay-title="Zed" { spawn "zeditor"; }
 
     // Fuzzel binds
-    Mod+D hotkey-overlay-title="Fuzzel" { spawn "fuzzel"; }
+    Mod+D hotkey-overlay-title="All apps" { spawn "fuzzel"; }
 	Mod+V hotkey-overlay-title="Clipboard" { spawn "sh" "-c" "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
-	Mod+B hotkey-overlay-title="Emoji" { spawn "bemoji"; }
-	Mod+N hotkey-overlay-title="Wallpaper-selector" { spawn-sh "~/.config/fuzzel/scripts/wallpapers-selector.sh"; }
+	Mod+A hotkey-overlay-title="Menu" { spawn-sh "~/.config/fuzzel/scripts/menu.sh"; }
 
 	// Special
     Mod+M hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }

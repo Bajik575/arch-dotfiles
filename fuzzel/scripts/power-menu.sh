@@ -1,6 +1,7 @@
+
 #!/bin/bash
 
-CHOICE=$(echo -e "poweroff\nreboot\nsuspend\nhibernate\nlock\nlogout" | fuzzel --dmenu --prompt "power >")
+CHOICE=$(echo -e "poweroff\nreboot\nsuspend\nhibernate\nlock\nlogout" | fuzzel --dmenu)
 
 case "$CHOICE" in
     "poweroff") systemctl poweroff ;;
