@@ -9,14 +9,14 @@ input {
     touchpad {
         // off
         tap
-        // dwt
-        // dwtp
-        // drag false
-        // drag-lock
+        dwt
+        dwtp
+        drag false
+        drag-lock
         natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-        // scroll-method "two-finger"
+        accel-speed 0.2
+        accel-profile "flat"
+        scroll-method "two-finger"
         // disabled-on-external-mouse
     }
 
@@ -109,6 +109,7 @@ layout {
 // AUTOSTART //
 ///////////////
 spawn-at-startup "waybar"
+spawn-at-startup "mako"
 spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
@@ -165,7 +166,7 @@ binds {
     // App launch binds
     Mod+Q hotkey-overlay-title="Alacritty" { spawn "alacritty"; }
 	Mod+E hotkey-overlay-title="Nemo" { spawn "nemo"; }
-	Mod+Z hotkey-overlay-title="Chrome" { spawn "google-chrome-stable"; }
+	Mod+Z hotkey-overlay-title="Firefox" { spawn "firefox"; }
 	Mod+T hotkey-overlay-title="Telegram" { spawn "AyuGram"; }
 	Mod+X hotkey-overlay-title="Zed" { spawn "zeditor"; }
 

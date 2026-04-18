@@ -5,7 +5,6 @@
     background-color:#1E1E2E;
 }
 #workspaces,
-#window,
 #clock,
 #pulseaudio,
 #network,
@@ -14,12 +13,10 @@
 #custom-notification,
 #cpu,
 #memory,
-#temperature,
-#custom-nvidia_temp,
+#temperature.cpu,
+#temperature.gpu,
 #backlight,
 #idle_inhibitor,
-#mpd,
-#taskbar,
 #custom-power,
 #custom-archicon,
 #language,
@@ -35,17 +32,17 @@
 
 #cpu{
     color: #BDD520;
-	margin: 0px 0px 0px 10px;
+	margin: 0px 0px 0px 15px;
 }
 #memory{
     color: #5436FF;
 }
-#cpu-temperature{
+#temperature.cpu{
     color: #8AE4FF;
 }
-#custom-gpu-temperature{
+#temperature.gpu{
 	color: #7DFDA5;
-	margin: 0px 10px 0px 0px;
+	margin: 0px 15px 0px 0px;
 }
 #battery{
 }

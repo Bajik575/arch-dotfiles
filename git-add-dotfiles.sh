@@ -8,6 +8,7 @@ git add alacritty
 git add fish
 git add cava
 git add hypr
+git add mako
 
 git add micro
 git add nvim
