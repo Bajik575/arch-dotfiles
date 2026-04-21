@@ -22,3 +22,4 @@ git add gtk-3.0
 git add gtk-4.0
 
 git add git-add-dotfiles.sh
+git add install.sh
