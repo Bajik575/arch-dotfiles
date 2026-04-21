@@ -129,14 +129,13 @@
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "on-click-right": "alacritty -e pulsemixer",
     },
-    "custom/archicon": {
-        "format": "",
-        "format-pending": "{} ",
+  "custom/archicon": {
+        "format": "{}",
         "return-type": "json",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
+        "exec": "if makoctl mode | grep -q do-not-disturb; then echo '{\"text\": \"\", \"tooltip\": \"dnd: on\"}'; else echo '{\"text\": \"\", \"tooltip\": \"dnd: off\"}'; fi",
+        "on-click": "makoctl mode -t do-not-disturb",
+        "tooltip": true,
+        "signal": 1
     },
     "custom/fuzzel-menu": {
         "format": "",

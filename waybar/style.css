@@ -1,30 +1,15 @@
 #waybar {
-    color: #CDD6F4;
-    font-family: "Fira Code", "JetBrains Mono", monospace;
-    font-size: 15px;
-    background-color:#1E1E2E;
-}
-#workspaces,
-#clock,
-#pulseaudio,
-#network,
-#battery,
-#tray,
-#custom-notification,
-#cpu,
-#memory,
-#temperature.cpu,
-#temperature.gpu,
-#backlight,
-#idle_inhibitor,
-#custom-power,
-#custom-archicon,
-#language,
-#custom-fuzzel-menu {
     font-family: "JetBrainsMono Nerd Font";
     font-weight: 900;
+    font-size: 15px;
+    background-color:#1E1E2E;
+    color: #CDD6F4;
+}
+
+.modules-left *, .modules-center *, .modules-right *{
     padding: 0 5px;
-  }
+    margin: 0;
+}
 
 #pulseaudio{
 	margin: 0px 10px
@@ -66,10 +51,9 @@
 
 
 #workspaces button {
-    padding: 0 8px;
     color: #cdd6f4;
-    padding: 0px 3px;
-    margin: 3px 0;
+    padding: 0px 0px;
+    margin: 0px 0;
 }
 #workspaces button.active {
     color: #7899FA;
