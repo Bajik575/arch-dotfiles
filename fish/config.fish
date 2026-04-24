@@ -5,7 +5,7 @@ set -gx GUI_EDITOR zed # code
 
 set -gx AUR_INSTALLER paru # yay
 set -gx BROWSER google-chrome # firefox
-set -gx FILE_MANAGER nemo
+set -gx FILE_MANAGER nautilus
 set -gx MEDIA_PLAYER vlc
 set -gx TERMINAL alacritty
 
@@ -17,6 +17,7 @@ if status is-interactive
     
     # one symbol shortcuts
     alias g git
+    alias z zeditor
     alias m micro
     alias v nvim
     alias h helix
@@ -41,8 +42,6 @@ if status is-interactive
     alias smd-restart "sudo systemctl restart smb nmb winbind"
     alias clock "tty-clock -c"
     alias martix "tmatrix -c default -s 16 -t "" --fade"
-    
-    zoxide init fish | source
 end
 
 # PATH

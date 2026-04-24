@@ -112,6 +112,7 @@ spawn-at-startup "waybar"
 spawn-at-startup "mako"
 spawn-at-startup "wl-clip-persist" "--clipboard" "regular"
 spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+spawn-at-startup "/usr/lib/soteria-polkit/soteria"
 
 spawn-at-startup "swayidle" "-w" \
     "timeout" "600" "swaylock" \
@@ -140,10 +141,13 @@ workspace "3"
 
 
 window-rule {
-    match app-id="nemo"
+    match app-id="org.gnome.Nautilus"
     open-floating true
 }
-
+window-rule {
+	match title=r#"^Yazi.*"#
+	open-floating true
+}
 window-rule {
 	match app-id="google-chrome-stable"
 	open-on-workspace "1"
@@ -165,7 +169,8 @@ binds {
 
     // App launch binds
     Mod+Q hotkey-overlay-title="Alacritty" { spawn "alacritty"; }
-	Mod+E hotkey-overlay-title="Nemo" { spawn "nemo"; }
+	Mod+E hotkey-overlay-title="Nautilus" { spawn "nautilus"; }
+	Mod+Shift+E hotkey-overlay-title="Yazi" { spawn "alacritty" "-e" "yazi"; }
 	Mod+Z hotkey-overlay-title="Firefox" { spawn "firefox"; }
 	Mod+T hotkey-overlay-title="Telegram" { spawn "Telegram"; }
 	Mod+X hotkey-overlay-title="Zed" { spawn "zeditor"; }

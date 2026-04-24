@@ -1,0 +1,41 @@
+[Default Applications]
+x-scheme-handler/tg=userapp-AyuGram Desktop-F7E4M3.desktop
+x-scheme-handler/tonsite=userapp-AyuGram Desktop-MZ23M3.desktop
+text/plain=dev.zed.Zed.desktop
+text/x-csrc=dev.zed.Zed.desktop
+text/x-python=dev.zed.Zed.desktop
+text/x-javascript=dev.zed.Zed.desktop
+application/x-shellscript=dev.zed.Zed.desktop
+image/jpeg=imv.desktop
+image/png=imv.desktop
+image/gif=imv.desktop
+image/bmp=imv.desktop
+image/webp=imv.desktop
+image/svg+xml=imv.desktop
+x-scheme-handler/mailto=dev.zed.Zed.desktop
+message/rfc822=dev.zed.Zed.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+inode/directory=org.gnome.Nautilus.desktop
+
+[Added Associations]
+x-scheme-handler/tg=userapp-AyuGram Desktop-F7E4M3.desktop;
+x-scheme-handler/tonsite=userapp-AyuGram Desktop-MZ23M3.desktop;
+text/plain=dev.zed.Zed.desktop
+text/x-csrc=dev.zed.Zed.desktop
+text/x-python=dev.zed.Zed.desktop
+text/x-javascript=dev.zed.Zed.desktop
+application/x-shellscript=dev.zed.Zed.desktop
+image/jpeg=imv-dir.desktop;imv.desktop;
+image/png=imv-dir.desktop;imv.desktop;
+image/gif=imv-dir.desktop;imv.desktop;
+image/bmp=imv-dir.desktop;imv.desktop;
+image/webp=imv-dir.desktop;imv.desktop;
+image/svg+xml=imv-dir.desktop;imv.desktop;
+x-scheme-handler/mailto=imv.desktop
+message/rfc822=imv.desktop
+text/html=imv.desktop;google-chrome.desktop;
+x-scheme-handler/http=imv.desktop;google-chrome.desktop;
+x-scheme-handler/https=imv.desktop;google-chrome.desktop;
+inode/directory=org.gnome.Nautilus.desktop;

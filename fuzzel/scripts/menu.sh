@@ -9,11 +9,11 @@ else
   TOGGLE_CMD="swayidle -w timeout 600 hyprlock timeout 605 'niri msg action power-off-monitors' before-sleep hyprlock &"
 fi
 
-CHOICE=$(printf "power\nmy-apps\nemoji\nwallpapers\n%s" "$INHIBITOR_STATUS" | fuzzel --dmenu)
+CHOICE=$(printf "power\ncontrol-apps\nemoji\nwallpapers\n%s" "$INHIBITOR_STATUS" | fuzzel --dmenu)
 
 case "$CHOICE" in
     "power") $SCRIPTS/power-menu.sh ;;
-    "my-apps") $SCRIPTS/my-apps.sh ;;
+    "control-apps") $SCRIPTS/control-apps.sh ;;
     "emoji") bemoji ;;
     "wallpapers") $SCRIPTS/wallpapers-selector.sh ;;
     "$INHIBITOR_STATUS") eval "$TOGGLE_CMD" ;;    
