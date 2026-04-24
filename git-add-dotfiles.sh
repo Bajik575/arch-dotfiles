@@ -12,6 +12,8 @@ git add hypr
 git add mako
 git add yazi
 
+git add mpd rmpc
+
 # editors
 git add micro
 git add nvim

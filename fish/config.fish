@@ -36,8 +36,8 @@ if status is-interactive
     alias hibernate "systemctl hibernate"
 
     # shortcuts
-    alias pcm "sudo pacman -S --noconfirm"
-    alias aur "$AUR_INSTALLER -S --noconfirm"
+    alias pcm "sudo pacman -S --noconfirm --needed"
+    alias aur "$AUR_INSTALLER -S --noconfirm --needed"
     alias sysd "sudo systemctl"
     alias smd-restart "sudo systemctl restart smb nmb winbind"
     alias clock "tty-clock -c"
