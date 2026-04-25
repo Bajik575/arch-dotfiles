@@ -1,4 +1,17 @@
 prefer-no-csd
+environment {	
+	QT_QPA_PLATFORMTHEME "qt5ct"
+
+	EDITOR "micro"
+	CLI_EDITOR "helix"
+	GUI_EDITOR "zed"
+
+	AUR_INSTALLER "yay"
+	BROWSER "google-chrome"
+	FILE_MANAGER "nautilus"
+	MEDIA_PLAYER "clapper"
+	TERMINAL "alacritty"
+}
 input {
     keyboard {
         xkb {
@@ -42,7 +55,10 @@ output "eDP-1" {
     transform "normal"
     position x=1280 y=0
 }
-
+cursor{
+	xcursor-theme "Bibata-Modern-Ice"
+	xcursor-size 24
+}
 layout {
     gaps 0
 
@@ -63,7 +79,7 @@ layout {
         // fixed 1920
     }
 
-    preset-window-heights { 
+    preset-window-heights {
 		proportion 0.25
         proportion 0.5
         proportion 0.75
@@ -71,7 +87,7 @@ layout {
      }
 
     default-column-width { proportion 0.5; }
-   
+
 	focus-ring{ off; }
 
     border {
@@ -118,7 +134,7 @@ spawn-at-startup "swayidle" "-w" \
     "timeout" "600" "swaylock" \
     "timeout" "605" "niri msg action power-off-monitors" \
     "before-sleep" "hyprlock -f"
-
+spawn-at-startup "swayosd-server"
 spawn-sh-at-startup "swaybg -i ~/Pictures/Wallpapers/wallpaper.jpg"
 
 screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
@@ -183,21 +199,20 @@ binds {
 	// Special
     Mod+M hotkey-overlay-title="Lock the Screen: hyprlock" { spawn "hyprlock"; }
 
-	// Volume control binds
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
-    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
-    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+    // Volumes
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume=raise"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "swayosd-client" "--output-volume=lower"; }
+    XF86AudioMute        allow-when-locked=true { spawn "swayosd-client" "--output-volume=mute-toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn "swayosd-client" "--input-volume=mute-toggle"; }
 
-    // Media control binds
-    XF86AudioPlay        allow-when-locked=true { spawn-sh "playerctl play-pause"; }
-    XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
-    XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
-    XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
+    // Media Controls
+    XF86AudioPlay        allow-when-locked=true { spawn "swayosd-client" "--playerctl=play-pause"; }
+    XF86AudioStop        allow-when-locked=true { spawn "swayosd-client" "--playerctl=stop"; }
+    XF86AudioPrev        allow-when-locked=true { spawn "swayosd-client" "--playerctl=prev"; }
+    XF86AudioNext        allow-when-locked=true { spawn "swayosd-client" "--playerctl=next"; }
 
-    // Brightness control binds
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "swayosd-client" "--brightness=raise"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "swayosd-client" "--brightness=lower"; }
 
 	// Special binds
     Mod+O repeat=false { toggle-overview; }
@@ -223,7 +238,7 @@ binds {
     // Mod+Shift+K     { move-window-up; }
     // Mod+Shift+L     { move-column-right; }
 
-	
+
     // the first or last window in a column.
     // Mod+J     { focus-window-or-workspace-down; }
     // Mod+K     { focus-window-or-workspace-up; }
