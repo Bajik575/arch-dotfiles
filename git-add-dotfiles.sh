@@ -28,6 +28,7 @@ git add xdg-desktop-portal
 git add mimeapps.list
 git add xsettingsd
 git add qt5ct
+git add qt6ct
 
 # files and folders beyond the .config
 git add root-useful-backup

@@ -7,15 +7,10 @@ environment {
 	GUI_EDITOR "zed"
 
 	AUR_INSTALLER "yay"
-	BROWSER "firefox"
+	BROWSER "google-chrome"
 	FILE_MANAGER "nautilus"
 	MEDIA_PLAYER "clapper"
 	TERMINAL "alacritty"
-
-	LUTTER_BACKEND "wayland"
-	GDK_BACKEND "wayland,x11"
-	QR_QPA_PLATFORM "wayland"
-	ELECTRON_OZONE_PLATFORM_HINT "wayland"
 }
 input {
     keyboard {
@@ -33,6 +28,7 @@ input {
         drag-lock
         natural-scroll
         accel-speed 0.2
+        accel-profile "flat"
         scroll-method "two-finger"
         // disabled-on-external-mouse
     }
@@ -40,7 +36,7 @@ input {
     mouse {
         // off
         // natural-scroll
-        accel-speed -0.45
+        accel-speed 0.2
         accel-profile "flat"
         // scroll-method "no-scroll"
     }

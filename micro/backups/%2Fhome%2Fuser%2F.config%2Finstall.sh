@@ -21,7 +21,7 @@ $install_command base-devel git # base
 $install_command niri waybar fuzzel mako nautilus fish # main
 $install_command wl-clipboard wl-clip-persist cliphist # clipboard
 $install_command ttf-jetbrains-mono-nerd noto-fonts-emoji # fonts
-$install_command libnotify polkit xdg-desktop-portal xdg-desktop-portal-gnome gnome-keyring qt5ct qt6ct qt5-base qt6-base qt5-wayland qt6-wayland libxcb xcb-util-cursor xorg-xwayland xwayland-satellite # libs
+$install_command libnotify polkit xdg-desktop-portal xdg-desktop-portal-gnome gnome-keyring qt5ct qt6ct qt5-base qt6-base qt5-wayland qt6-wayland libxcb xcb-util-cursor libxcb-cursor0 xorg-xwayland xwayland-satellite # libs
 $install_command chafa yazi brightnessctl micro helix # cli useful
 $install_command clapper imv # gui useful
 $install_command swaybg swayosd swayidle hyprlock # special
